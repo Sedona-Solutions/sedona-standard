@@ -1,0 +1,14 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+elfinder:
+    resource: "@FMElfinderBundle/Resources/config/routing.yml"
+
+admin:
+    resource: "@AppBundle/Controller/Admin"
+    type:     annotation
+    prefix:   /admin

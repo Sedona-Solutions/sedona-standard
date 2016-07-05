@@ -1,0 +1,44 @@
+crud:
+  form:
+    edit: Edition
+    list: Retour à la liste
+    save: Sauvegarde
+    new: Nouveau
+    cancel: Annuler
+    delete: Supprimer
+    required: Ce champ est obligatoire
+    search_placeholder: 'Recherche'
+    confirm: Etes vous sûr ?
+  search_and_append: 'Rechercher et ajouter un %entity_name%'
+  message:
+    created: L'élément a été créé
+    deleted: L'élément a été supprimé
+    saved: L'élément a été mis à jour
+  title:
+    edit: Edition
+    index: Liste
+    new: Nouveau
+    show: Affichage
+    delete: Supprimer
+    properties: Propriétés
+
+admin:
+    edit_contents: Edition des contenus
+    track:
+        entity_name: Track
+        title: Title
+        album: Album
+    album:
+        entity_name: Album
+        title: Title
+        date: Date
+        datetime: Datetime
+        time: Time
+        artist: Artist
+        track: Track
+    artist:
+        entity_name: Artist
+        name: Name
+        biography: Biography
+        music_story_id: Music story id
+        album: Album

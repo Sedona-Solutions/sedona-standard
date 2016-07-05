@@ -1,0 +1,41 @@
+{% extends '::layout_admin.html.twig' %}
+
+
+{% block page_title %}
+    {{ "crud.title.show"|trans([], 'admin') }}
+{% endblock %}
+
+{% block page_subtitle %}
+    {{ "admin.track.entity_name"|trans([], "admin") }}
+{% endblock %}
+
+{% block content %}
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs pull-right">
+            <li class="pull-left header"><i class="fa fa-th"></i> {{ entity }}</li>
+            <li class="active"><a data-toggle="tab" href="#tab_entity_name_1">{{ "crud.title.properties"|trans([], "admin") }}</a></li>
+                </ul>
+        <div class="tab-content">
+            <div id="tab_entity_name_1" class="tab-pane active">                <form role="form">
+                    <table class="record_properties">
+                        <tbody>
+                            <tr>
+                                <th>{{ "admin.track.title"|trans([], "admin") }}</th>
+                                <td>{{ entity.title }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ "admin.track.album"|trans([], "admin") }}</th>
+                                <td>{{ entity.album }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-center">
+                        <a href="{{ path('admin_track_edit', { id:entity.id}) }}" class="btn btn-default">{{ 'crud.form.edit'|trans([], 'admin')|addGlyphicon("edit") }}</a>                    <a href="{{ path('admin_track_list') }}" class="btn btn-default">{{ 'crud.form.list'|trans([], 'admin')|addGlyphicon("list") }}</a>
+                    </div>
+                </form>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

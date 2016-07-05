@@ -1,0 +1,14 @@
+
+{% block content %}
+
+    <div class="form-group">
+        <div>
+            <input type="text" class="form-control" placeholder="{{ 'crud.search_and_append'|trans({'%entity_name%': 'admin.album.track'|trans([], 'admin') }, 'admin') }}" data-toggle="select2-remote" autocomplete="false" data-target="#{{ datatable.name }}" data-source="{{ path('admin_album_track_search', { id:entity.id}) }}" />
+        </div>
+    </div>
+
+    <div class="box-body table-responsive">
+        {{ datatable_render(datatable) }}
+    </div>
+
+{% endblock %}

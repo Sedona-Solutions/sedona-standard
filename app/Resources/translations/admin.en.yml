@@ -1,0 +1,44 @@
+crud:
+  form:
+    edit: Edit
+    list: Back to list
+    save: Save
+    new: Create new
+    cancel: Cancel
+    delete: Delete
+    required: This field is required
+    search_placeholder: 'Search'
+    confirm: Are you sure?
+  search_and_append: 'Search and add %entity_name%'
+  message:
+    created: The item has been created
+    deleted: The item has been deleted
+    saved: The item has been updated
+  title:
+    edit: Edit
+    index: List
+    new: New
+    show: Show
+    delete: Delete
+    properties: Properties
+
+admin:
+    edit_contents: Edit contents
+    track:
+        entity_name: Track
+        title: Title
+        album: Album
+    album:
+        entity_name: Album
+        title: Title
+        date: Date
+        datetime: Datetime
+        time: Time
+        artist: Artist
+        track: Track
+    artist:
+        entity_name: Artist
+        name: Name
+        biography: Biography
+        music_story_id: Music story id
+        album: Album

@@ -1,0 +1,51 @@
+{% extends '::layout_admin.html.twig' %}
+
+
+{% block page_title %}
+    {{ "crud.title.show"|trans([], 'admin') }}
+{% endblock %}
+
+{% block page_subtitle %}
+    {{ "admin.artist.entity_name"|trans([], "admin") }}
+{% endblock %}
+
+{% block content %}            
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs pull-right">
+            <li class="pull-left header"><i class="fa fa-th"></i> {{ entity }}</li>
+            <li><a data-toggle="tabajax" data-target="#tab_album_1" href="{{ path('admin_artist_album_list', { id:entity.id}) }}">{{ "admin.artist.album"|trans([], "admin") }}</a></li>
+                <li class="active"><a data-toggle="tab" href="#tab_entity_name_2">{{ "crud.title.properties"|trans([], "admin") }}</a></li>
+                </ul>
+        <div class="tab-content">
+            <div id="tab_album_1" class="tab-pane">                    
+                    
+                <div class="overlay"></div>
+                <div class="loading-img"></div>
+            </div>
+            <div id="tab_entity_name_2" class="tab-pane active">                <form role="form">
+                    <table class="record_properties">
+                        <tbody>
+                            <tr>
+                                <th>{{ "admin.artist.name"|trans([], "admin") }}</th>
+                                <td>{{ entity.name }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ "admin.artist.biography"|trans([], "admin") }}</th>
+                                <td>{{ entity.biography }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ "admin.artist.music_story_id"|trans([], "admin") }}</th>
+                                <td>{{ entity.musicstoryid }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-center">
+                        <a href="{{ path('admin_artist_edit', { id:entity.id}) }}" class="btn btn-default">{{ 'crud.form.edit'|trans([], 'admin')|addGlyphicon("edit") }}</a>                    <a href="{{ path('admin_artist_list') }}" class="btn btn-default">{{ 'crud.form.list'|trans([], 'admin')|addGlyphicon("list") }}</a>
+                    </div>
+                </form>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
