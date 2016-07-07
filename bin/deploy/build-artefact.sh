@@ -18,5 +18,6 @@ fi
 echo "Build artefact ${FILE}..."
 mkdir -p build
 rm -f build/$FILE.tgz
-#composer install -o --no-scripts
-tar cfz build/$FILE.tgz . --transform s,^,${FILE}/, --exclude=build/* --exclude=var/* --exclude=app/config/parameters.yml
+composer install -o --no-scripts
+php bin/console assets:install -e prod
+tar cfz build/$FILE.tgz . --transform s,^,${FILE}/, --exclude=build/*.tgz --exclude=var/* --exclude=app/config/parameters.yml

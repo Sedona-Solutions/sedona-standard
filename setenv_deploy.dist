@@ -1,18 +1,22 @@
 # TO BE COPIED AND CALLED VIA "source setenv_deploy" before running make commands
 # Those variables define location for global directories shared among publications
 
-# Define web root (where apache is pointing)
-export WEB_ROOT="/var/www/project"
+# Helpers if you put everything in the same global dir (not exported)
+PROJECT_NAME='project'
+ROOT_DIR='${HOME}/${PROJECT_NAME}'
 
-# Define global parameters file
-export WEB_PARAMETERS="/home/user/global/parameters.yml"
+# Define web root (where apache is pointing)
+export WEB_ROOT="/var/www/${PROJECT_NAME}"
+
+# Define global parameters.yml file
+export WEB_PARAMETERS="${ROOT_DIR}/parameters.yml"
 
 # Define global log directory
-export WEB_LOGS="/home/user/global/logs"
+export WEB_LOGS="${ROOT_DIR}/logs"
 
 # Define global session directory.
-export WEB_SESSION="/home/user/global/session"
+export WEB_SESSION="${ROOT_DIR}/sessions"
 
 # Define global cache directory.
 # Usually not activated, only useful if local directory can't have ACL (sources on NFS)
-# export WEB_CACHE="/home/user/global/cache"
+# export WEB_CACHE="${ROOT_DIR}/cache"

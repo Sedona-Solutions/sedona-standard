@@ -10,7 +10,7 @@ help:
 	$(display_help)
 
 build-artefact:
-	@./bin/deploy/build-artefact.sh
+	@./bin/deploy/build-artefact.sh ${name}
 
 install-dev: install-global-dirs composer-install create-db
 	@echo "Dev Installed"
