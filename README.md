@@ -2,7 +2,7 @@ sedona-standard
 ===============
 
 This project is a skeleton for new projects. Is is composed of:
-* Symfony 3.2
+* Symfony 3.1
 * Sedona SBO (Back-Office)
 * Sedona deployment tools
 
