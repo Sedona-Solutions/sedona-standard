@@ -1,8 +1,22 @@
 #!/bin/bash
 
-echo "Create artefact..."
+# Try to find project name
+COMPOSER=`cat composer.json`
+[[ $COMPOSER =~ \"name\":[\ ]*\"([^\"]*)\" ]]
+PROJECT=${BASH_REMATCH[1]//'/'/'-'}
+
+if [ -n "$1" ]; then
+    FILE=${1}
+else
+    if [ -z "$PROJECT" ]; then
+        PROJECT=artefact
+    fi
+    NOW=$(date +"%Y%m%d-%H%M%S")
+    FILE="${PROJECT}-${NOW}"
+fi
+
+echo "Build artefact ${FILE}..."
 mkdir -p build
-FILE=artefact.tgz
-rm build/$FILE
-composer install -o --no-scripts
-tar cfz build/$FILE . --exclude=build/* --exclude=var/* --exclude=app/config/parameters.yml
+rm -f build/$FILE.tgz
+#composer install -o --no-scripts
+tar cfz build/$FILE.tgz . --transform s,^,${FILE}/, --exclude=build/* --exclude=var/* --exclude=app/config/parameters.yml

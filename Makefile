@@ -24,9 +24,6 @@ install-prod: install-global-dirs create-db publish-to-root-dir
 update-prod: install-global-dirs migrate-db publish-to-root-dir
 	@echo "Prod Updated"
 
-var-permissions:
-	@./bin/deploy/var-permissions.sh
-
 composer-install:
 	@./bin/deploy/composer-install.sh
 
