@@ -2,8 +2,8 @@
 # Those variables define location for global directories shared among publications
 
 # Helpers if you put everything in the same global dir (not exported)
-PROJECT_NAME='project'
-ROOT_DIR='${HOME}/${PROJECT_NAME}'
+PROJECT_NAME='project_name'
+ROOT_DIR="${HOME}/${PROJECT_NAME}"
 
 # Define web root (where apache is pointing)
 export WEB_ROOT="/var/www/${PROJECT_NAME}"

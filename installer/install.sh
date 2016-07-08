@@ -4,9 +4,7 @@
 # THIS SCRIPT SHOULD BE COPIED IN A GLOBAL DIRECTORY NEXT TO setenv_deploy
 
 if [ $# -lt 1 ]; then
-    echo "Usage first install:"
-    echo " install.sh <artefact.tgz> init"
-    echo "Usage updates:"
+    echo "Usage:"
     echo " install.sh <artefact.tgz>"
     exit 1
 fi
@@ -36,8 +34,4 @@ fi
 
 source setenv_deploy
 
-if [ 'init' = $2 ]; then
-    tar xfz $FILE && rm $FILE && cd $DIR && make -B install-prod
-else
-    tar xfz $FILE && rm $FILE && cd $DIR && make -B update-prod
-fi
+tar xfz $FILE && rm $FILE && cd $DIR && make -B update-prod
