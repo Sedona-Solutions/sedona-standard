@@ -1,6 +1,5 @@
 define display_help
         @echo "       make -B install-dev               Install a fresh dev environment from sources"
-        @echo "       make -B install-prod              Install a fresh prod environment from artefact"
         @echo "       make -B update-dev                Update an existing dev environment from sources"
         @echo "       make -B update-prod               Update an existing prod environment from artefact"
         @echo "       make -B build-artefact            Generate Artefact"
@@ -17,9 +16,6 @@ install-dev: install-global-dirs composer-install create-db
 
 update-dev: install-global-dirs composer-install migrate-db
 	@echo "Dev Updated"
-
-install-prod: install-global-dirs create-db publish-to-root-dir
-	@echo "Prod Installed"
 
 update-prod: install-global-dirs migrate-db publish-to-root-dir
 	@echo "Prod Updated"
