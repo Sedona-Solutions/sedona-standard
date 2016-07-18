@@ -52,7 +52,7 @@ class AlbumController extends BaseCrudController
     */
     public function newAction(Request $request)
     {
-        return $this->manageNew(new Album(), $request, new AlbumType());
+        return $this->manageNew(new Album(), $request, AlbumType::class);
     }
 
     /**
@@ -62,7 +62,7 @@ class AlbumController extends BaseCrudController
     */
     public function editAction(Album $entity, Request $request)
     {
-        return $this->manageEdit($entity, $request, new AlbumType());
+        return $this->manageEdit($entity, $request, AlbumType::class);
     }
 
     /**

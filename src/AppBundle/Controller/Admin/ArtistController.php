@@ -51,7 +51,7 @@ class ArtistController extends BaseCrudController
     */
     public function newAction(Request $request)
     {
-        return $this->manageNew(new Artist(), $request, new ArtistType());
+        return $this->manageNew(new Artist(), $request, ArtistType::class);
     }
 
     /**
@@ -61,7 +61,7 @@ class ArtistController extends BaseCrudController
     */
     public function editAction(Artist $entity, Request $request)
     {
-        return $this->manageEdit($entity, $request, new ArtistType());
+        return $this->manageEdit($entity, $request, ArtistType::class);
     }
 
     /**

@@ -4,7 +4,8 @@ namespace AppBundle\Form\Admin;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type as Type;
 
 class TrackType extends AbstractType
 {
@@ -17,7 +18,7 @@ class TrackType extends AbstractType
         /*  */
         $builder
             ->add('title', null, ['required' => true])
-            ->add("album", "entity_select2", [
+            ->add("album", \Sedona\SBORuntimeBundle\Form\Type\EntitySelect2Type::class, [
                    'class'             => 'AppBundle\Entity\Album',
                    'searchRouteName'   => 'admin_track_album_search',
                    'property'          => 'title',
@@ -28,9 +29,9 @@ class TrackType extends AbstractType
     }
     
     /**
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'AppBundle\Entity\Track'
@@ -40,7 +41,7 @@ class TrackType extends AbstractType
     /**
      * @return string
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'admin_track';
     }

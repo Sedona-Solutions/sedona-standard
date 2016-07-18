@@ -51,7 +51,7 @@ class TrackController extends BaseCrudController
     */
     public function newAction(Request $request)
     {
-        return $this->manageNew(new Track(), $request, new TrackType());
+        return $this->manageNew(new Track(), $request, TrackType::class);
     }
 
     /**
@@ -72,7 +72,7 @@ class TrackController extends BaseCrudController
     */
     public function editAction(Track $entity, Request $request)
     {
-        return $this->manageEdit($entity, $request, new TrackType());
+        return $this->manageEdit($entity, $request, TrackType::class);
     }
 
     /**
