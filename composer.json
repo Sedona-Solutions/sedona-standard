@@ -30,7 +30,7 @@
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
-        "sedona/sbo": "dev-release-1.1"
+        "sedona/sbo": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

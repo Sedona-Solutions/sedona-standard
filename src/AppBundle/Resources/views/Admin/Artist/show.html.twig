@@ -30,8 +30,7 @@
                                 <td>{{ entity.name }}</td>
                             </tr>
                             <tr>
-                                <th>{{ "admin.artist.biography"|trans([], "admin") }}</th>
-                                <td>{{ entity.biography }}</td>
+                                <th>{{ "admin.artist.biography"|trans([], "admin") }}</th>                                    <td>{{ entity.biography|purify }}</td>
                             </tr>
                             <tr>
                                 <th>{{ "admin.artist.music_story_id"|trans([], "admin") }}</th>

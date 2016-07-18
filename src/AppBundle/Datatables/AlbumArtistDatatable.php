@@ -39,16 +39,30 @@ class AlbumArtistDatatable extends ArtistDatatable
                 'route' => 'admin_artist_show',
                 'route_parameters' => array('id' => 'id'),
                 'label' => $this->translator->trans('crud.title.show', [], 'admin'),
-                'icon' => 'glyphicon glyphicon-eye-open',
+                'icon' => 'glyphicon glyphicon-book',
                 'attributes' => array(
                     'rel' => 'tooltip',
-                    'title' => 'Show',
+                    'title' => $this->translator->trans('crud.title.show', [], 'admin'),
                     'class' => 'btn btn-default btn-xs',
                     'role' => 'button'
                 )
             ];
         }
-        if ($this->router->getRouteCollection()->get('admin_album_artist_remove') != null) {
+        if ($this->router->getRouteCollection()->get('admin_artist_edit') != null) {
+            $actions[] = [
+                'route' => 'admin_artist_edit',
+                'route_parameters' => array('id' => 'id'),
+                'label' => $this->translator->trans('crud.title.edit', [], 'admin'),
+                'icon' => 'glyphicon glyphicon-edit',
+                'attributes' => array(
+                    'rel' => 'tooltip',
+                    'title' => $this->translator->trans('crud.title.edit', [], 'admin'),
+                    'class' => 'btn btn-default btn-xs',
+                    'role' => 'button'
+                )
+            ];
+        }
+        if ($this->router->getRouteCollection()->get('admin_artist_delete') != null) {
             $actions[] = [
                 'route' => 'admin_album_artist_remove',
                 'route_parameters' => array('artist_id' => 'id', 'id' => 'album[0].id' ),

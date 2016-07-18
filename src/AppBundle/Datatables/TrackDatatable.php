@@ -41,6 +41,39 @@ class TrackDatatable extends AbstractCrudDatatableView
                 )
             ];
         }
+
+        if ($this->router->getRouteCollection()->get('admin_track_edit') != null) {
+            $actions[] = [
+                'route' => 'admin_track_edit',
+                'route_parameters' => array('id' => 'id'),
+                'label' => $this->translator->trans('crud.title.edit', [], 'admin'),
+                'icon' => 'glyphicon glyphicon-edit',
+                'attributes' => array(
+                    'rel' => 'tooltip',
+                    'title' => $this->translator->trans('crud.title.edit', [], 'admin'),
+                    'class' => 'btn btn-default btn-xs',
+                    'role' => 'button'
+                )
+            ];
+        }
+
+        if ($this->router->getRouteCollection()->get('admin_track_delete') != null) {
+            $actions[] = [
+                'route' => 'admin_track_delete',
+                'route_parameters' => array('id' => 'id'),
+                'label' => $this->translator->trans('crud.title.delete', [], 'admin'),
+                'icon' => 'glyphicon glyphicon-remove-circle',
+                'attributes' => array(
+                    'rel' => 'tooltip',
+                    'title' => $this->translator->trans('crud.title.delete', [], 'admin'),
+                    'class' => 'btn btn-default btn-xs',
+                    'role' => 'button',
+                    'data-toggle' => 'delete',
+                    'data-confirm' => $this->translator->trans('crud.form.confirm', [], 'admin')
+                )
+            ];
+        }
+
         if(count($actions)>0) {
             $this->getColumnBuilder()
                 ->add(null, 'action', array(
