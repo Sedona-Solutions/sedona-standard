@@ -18,10 +18,10 @@ use JMS\DiExtraBundle\Annotation\Service;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class SidebarSetupMenuListener
- * @package Sedona\SBOTestBundle
+ * Class SidebarSetupMenuListener.
+ *
  * @Service("menu.listener")
-  */
+ */
 class SidebarSetupMenuListener
 {
     /**
@@ -36,12 +36,11 @@ class SidebarSetupMenuListener
         foreach ($this->getMenu($request) as $item) {
             $event->addItem($item);
         }
-
     }
 
     protected function getMenu(Request $request)
     {
-        $earg      = array();
+        $earg = array();
         $rootItems = array(
 //            $usersLink = new MenuItemModel('users', 'admin.edit_users', 'admin_user_list', $earg, 'fa fa-users'),
             $editLink = new MenuItemModel('crud', 'admin.edit_contents', null, $earg, 'fa fa-edit'),
@@ -57,44 +56,39 @@ class SidebarSetupMenuListener
             ;
 
         return $this->activateByRoute($request->get('_route'), $rootItems);
-
     }
 
     protected function activateByRoute($route, $items)
     {
         // First check exact match
         $found = false;
-        foreach($items as $item) { /** @var $item MenuItemModel */
-            if($item->hasChildren()) {
+        foreach ($items as $item) { /** @var $item MenuItemModel */
+            if ($item->hasChildren()) {
                 $this->activateByRoute($route, $item->getChildren());
-            }
-            else {
-                if($item->getRoute() == $route) {
+            } else {
+                if ($item->getRoute() == $route) {
                     $item->setIsActive(true);
                     $found = true;
                 }
             }
         }
         // Then check approx match admin_A_*
-        if(!$found) {
-            $routeElts = explode("_", $route);
-            if($routeElts[0] == "admin" && count($routeElts) == 3) {
-                foreach($items as $item) { /** @var $item MenuItemModel */
-                    if($item->hasChildren()) {
+        if (!$found) {
+            $routeElts = explode('_', $route);
+            if ($routeElts[0] == 'admin' && count($routeElts) == 3) {
+                foreach ($items as $item) { /** @var $item MenuItemModel */
+                    if ($item->hasChildren()) {
                         $this->activateByRoute($route, $item->getChildren());
-                    }
-                    else {
-                        $elts = explode("_", $item->getRoute());
-                        if($elts[0] == "admin" && $elts[1] == $routeElts[1]) {
+                    } else {
+                        $elts = explode('_', $item->getRoute());
+                        if ($elts[0] == 'admin' && $elts[1] == $routeElts[1]) {
                             $item->setIsActive(true);
                         }
                     }
                 }
             }
-
         }
+
         return $items;
     }
-
-
 }

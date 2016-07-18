@@ -9,18 +9,18 @@ use Symfony\Component\Form\Extension\Core\Type as Type;
 
 class AlbumType extends AbstractType
 {
-        /**
+    /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         /*  */
         $builder
             ->add('title', null, ['required' => true])
-            ->add("date", Type\DateType::class, array('widget' => 'single_text', 'format' => "dd/MM/yyyy", 'required' => false))
-            ->add("datetime", Type\DateTimeType::class, array('widget' => 'single_text', 'format' => "dd/MM/yyyy HH:mm:ss", 'required' => false))
-            ->add("time", Type\TimeType::class, array('widget' => 'single_text', 'with_seconds' => true, 'required' => false))
+            ->add('date', Type\DateType::class, array('widget' => 'single_text', 'format' => 'dd/MM/yyyy', 'required' => false))
+            ->add('datetime', Type\DateTimeType::class, array('widget' => 'single_text', 'format' => 'dd/MM/yyyy HH:mm:ss', 'required' => false))
+            ->add('time', Type\TimeType::class, array('widget' => 'single_text', 'with_seconds' => true, 'required' => false))
         //   ->add("artist", \Sedona\SBORuntimeBundle\Form\Type\EntitySelect2Type::class, [
         //           'class'             => 'AppBundle\Entity\Artist',
         //           'searchRouteName'   => 'admin_artist_search',
@@ -35,14 +35,14 @@ class AlbumType extends AbstractType
         //       ])
         ;
     }
-    
+
     /**
      * @param OptionsResolver $resolver
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Album'
+            'data_class' => 'AppBundle\Entity\Album',
         ));
     }
 

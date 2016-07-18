@@ -5,11 +5,10 @@ namespace AppBundle\Datatables;
 use AppBundle\Entity\Artist;
 use JMS\DiExtraBundle\Annotation\Service;
 use JMS\DiExtraBundle\Annotation\Tag;
-use Sg\DatatablesBundle\Datatable\View\AbstractDatatableView;
-use Sg\DatatablesBundle\Datatable\View\Style;
 
 /**
- * Class ArtistDatatable
+ * Class ArtistDatatable.
+ *
  * @Service("admin_artist_album_datatable")
  * @Tag("sg.datatable.view")
  */
@@ -29,7 +28,7 @@ class ArtistAlbumDatatable extends AlbumDatatable
         $this->setParameters();
         $this->setColumns();
 
-        $this->ajax->set(['url' => $this->router->generate('admin_artist_album_datatable',['id'=> $artist->getId()])]);
+        $this->ajax->set(['url' => $this->router->generate('admin_artist_album_datatable', ['id' => $artist->getId()])]);
 
         //$this->options->set(['individual_filtering' => true]); // Uncomment it to have a search for each field
 
@@ -44,8 +43,8 @@ class ArtistAlbumDatatable extends AlbumDatatable
                     'rel' => 'tooltip',
                     'title' => $this->translator->trans('crud.title.show', [], 'admin'),
                     'class' => 'btn btn-default btn-xs',
-                    'role' => 'button'
-                )
+                    'role' => 'button',
+                ),
             ];
         }
         if ($this->router->getRouteCollection()->get('admin_album_edit') != null) {
@@ -58,14 +57,14 @@ class ArtistAlbumDatatable extends AlbumDatatable
                     'rel' => 'tooltip',
                     'title' => $this->translator->trans('crud.title.edit', [], 'admin'),
                     'class' => 'btn btn-default btn-xs',
-                    'role' => 'button'
-                )
+                    'role' => 'button',
+                ),
             ];
         }
         if ($this->router->getRouteCollection()->get('admin_album_delete') != null) {
             $actions[] = [
                 'route' => 'admin_artist_album_remove',
-                'route_parameters' => array('album_id' => 'id', 'id' => 'artist[0].id' ),
+                'route_parameters' => array('album_id' => 'id', 'id' => 'artist[0].id'),
                 'label' => $this->translator->trans('crud.form.delete', [], 'admin'),
                 'icon' => 'glyphicon glyphicon-remove-circle',
                 'attributes' => array(
@@ -78,21 +77,20 @@ class ArtistAlbumDatatable extends AlbumDatatable
                 ),
             ];
         }
-        if(count($actions)>0) {
+        if (count($actions) > 0) {
             // mappedBy > artist | inversedBy > 
             $this->getColumnBuilder()
-                ->add('artist.id','column',['visible' => false])
+                ->add('artist.id', 'column', ['visible' => false])
                 ->add(null, 'action', array(
                     'title' => 'Actions',
-                    'actions' => $actions
+                    'actions' => $actions,
                 ));
         }
-
     }
 
     /**
-    * {@inheritdoc}
-    */
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'artist_album_datatable';

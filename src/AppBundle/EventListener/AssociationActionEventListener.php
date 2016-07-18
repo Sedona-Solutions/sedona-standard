@@ -16,15 +16,17 @@ use JMS\DiExtraBundle\Annotation\Service;
 use Sedona\SBORuntimeBundle\Event\AdminAssociationActionEvent;
 
 /**
- * Class AssociationActionEventListener
- * @package Sedona\SBOTestBundle\EventListener
+ * Class AssociationActionEventListener.
+ *
  * @Service("association.listener")
  */
 class AssociationActionEventListener
 {
     /**
-     * Method called before flush
+     * Method called before flush.
+     *
      * @Observe("sbo.association.preAction")
+     *
      * @param AdminAssociationActionEvent $event
      */
     public function onCrudEventPre(AdminAssociationActionEvent $event)
@@ -33,13 +35,14 @@ class AssociationActionEventListener
     }
 
     /**
-     * Method called after flush
+     * Method called after flush.
+     *
      * @Observe("sbo.association.postAction")
+     *
      * @param AdminAssociationActionEvent $event
      */
     public function onCrudEventPost(AdminAssociationActionEvent $event)
     {
         // Do something AFTER adding/removing
     }
-
 }

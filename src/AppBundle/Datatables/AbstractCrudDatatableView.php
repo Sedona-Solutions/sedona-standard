@@ -4,7 +4,6 @@ namespace AppBundle\Datatables;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Sg\DatatablesBundle\Datatable\View\AbstractDatatableView;
-use Symfony\Bridge\Twig\TwigEngine;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
@@ -12,13 +11,11 @@ use Symfony\Component\Translation\TranslatorInterface;
 use Twig_Environment;
 
 /**
- * Base CRUD Datatable View
+ * Base CRUD Datatable View.
  */
 abstract class AbstractCrudDatatableView extends AbstractDatatableView
 {
-
     private $linesFormatter = [];
-
 
     public function __construct(
         AuthorizationCheckerInterface $authorizationChecker,
@@ -28,8 +25,7 @@ abstract class AbstractCrudDatatableView extends AbstractDatatableView
         RouterInterface $router,
         EntityManagerInterface $em,
         array $templates
-    )
-    {
+    ) {
         parent::__construct(
             $authorizationChecker,
             $securityToken,
@@ -47,8 +43,8 @@ abstract class AbstractCrudDatatableView extends AbstractDatatableView
         $this->linesFormatter[] = $lineFormatter;
     }
 
-
-    protected function initLineFormatter() {
+    protected function initLineFormatter()
+    {
     }
 
     /**
@@ -58,16 +54,16 @@ abstract class AbstractCrudDatatableView extends AbstractDatatableView
     {
         $formatters = $this->linesFormatter;
 
-        $formatter = function($line) use ($formatters) {
-            foreach($formatters as $callable) {
+        $formatter = function ($line) use ($formatters) {
+            foreach ($formatters as $callable) {
                 if (is_callable($callable)) {
                     $line = call_user_func($callable, $line);
                 }
             }
+
             return $line;
         };
 
         return $formatter;
     }
-
 }

@@ -46,7 +46,7 @@ class Artist
     private $music_story_id;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -54,9 +54,9 @@ class Artist
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -64,9 +64,10 @@ class Artist
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
+     *
      * @return Artist
      */
     public function setName($name)
@@ -77,9 +78,9 @@ class Artist
     }
 
     /**
-     * Get name
+     * Get name.
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -87,9 +88,10 @@ class Artist
     }
 
     /**
-     * Set biography
+     * Set biography.
      *
      * @param string $biography
+     *
      * @return Artist
      */
     public function setBiography($biography)
@@ -100,9 +102,9 @@ class Artist
     }
 
     /**
-     * Get biography
+     * Get biography.
      *
-     * @return string 
+     * @return string
      */
     public function getBiography()
     {
@@ -110,9 +112,10 @@ class Artist
     }
 
     /**
-     * Set music_story_id
+     * Set music_story_id.
      *
-     * @param integer $musicStoryId
+     * @param int $musicStoryId
+     *
      * @return Artist
      */
     public function setMusicStoryId($musicStoryId)
@@ -123,9 +126,9 @@ class Artist
     }
 
     /**
-     * Get music_story_id
+     * Get music_story_id.
      *
-     * @return integer 
+     * @return int
      */
     public function getMusicStoryId()
     {
@@ -133,9 +136,10 @@ class Artist
     }
 
     /**
-     * Add album
+     * Add album.
      *
      * @param \AppBundle\Entity\Album $album
+     *
      * @return Artist
      */
     public function addAlbum(\AppBundle\Entity\Album $album)
@@ -149,7 +153,7 @@ class Artist
     }
 
     /**
-     * Remove album
+     * Remove album.
      *
      * @param \AppBundle\Entity\Album $album
      */
@@ -162,9 +166,9 @@ class Artist
     }
 
     /**
-     * Get album
+     * Get album.
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getAlbum()
     {

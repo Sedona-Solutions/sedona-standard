@@ -56,7 +56,7 @@ class Album
     private $time;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -65,9 +65,9 @@ class Album
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -75,9 +75,10 @@ class Album
     }
 
     /**
-     * Set title
+     * Set title.
      *
      * @param string $title
+     *
      * @return Album
      */
     public function setTitle($title)
@@ -88,9 +89,9 @@ class Album
     }
 
     /**
-     * Get title
+     * Get title.
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -98,9 +99,10 @@ class Album
     }
 
     /**
-     * Set date
+     * Set date.
      *
      * @param \DateTime $date
+     *
      * @return Album
      */
     public function setDate($date)
@@ -111,9 +113,9 @@ class Album
     }
 
     /**
-     * Get date
+     * Get date.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -121,9 +123,10 @@ class Album
     }
 
     /**
-     * Add artist
+     * Add artist.
      *
      * @param \Sedona\SBOTestBundle\Entity\Artist $artist
+     *
      * @return Album
      */
     public function addArtist(\AppBundle\Entity\Artist $artist)
@@ -137,7 +140,7 @@ class Album
     }
 
     /**
-     * Remove artist
+     * Remove artist.
      *
      * @param \Sedona\SBOTestBundle\Entity\Artist $artist
      */
@@ -150,9 +153,9 @@ class Album
     }
 
     /**
-     * Get artist
+     * Get artist.
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getArtist()
     {
@@ -160,9 +163,10 @@ class Album
     }
 
     /**
-     * Add track
+     * Add track.
      *
      * @param \Sedona\SBOTestBundle\Entity\Track $track
+     *
      * @return Album
      */
     public function addTrack(\AppBundle\Entity\Track $track)
@@ -174,7 +178,7 @@ class Album
     }
 
     /**
-     * Remove track
+     * Remove track.
      *
      * @param \Sedona\SBOTestBundle\Entity\Track $track
      */
@@ -185,7 +189,7 @@ class Album
     }
 
     /**
-     * Get track
+     * Get track.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -203,9 +207,10 @@ class Album
     }
 
     /**
-     * Set datetime
+     * Set datetime.
      *
      * @param \DateTime $datetime
+     *
      * @return Album
      */
     public function setDatetime($datetime)
@@ -216,9 +221,9 @@ class Album
     }
 
     /**
-     * Get datetime
+     * Get datetime.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDatetime()
     {
@@ -226,9 +231,10 @@ class Album
     }
 
     /**
-     * Set time
+     * Set time.
      *
      * @param \DateTime $time
+     *
      * @return Album
      */
     public function setTime($time)
@@ -239,9 +245,9 @@ class Album
     }
 
     /**
-     * Get time
+     * Get time.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getTime()
     {

@@ -9,11 +9,11 @@ use Symfony\Component\DependencyInjection\Exception\InactiveScopeException;
 class ContainerServicesTest extends WebTestCase
 {
     /**
-     * List of services not to be checked
+     * List of services not to be checked.
      */
     protected function getBlackList()
     {
-        return [            
+        return [
             'kernel',
             'web_profiler.controller.router',
             'cache_warmer',
@@ -22,7 +22,7 @@ class ContainerServicesTest extends WebTestCase
             'assetic.controller',
             'security.secure_random',
             'security.context',
-            'form.csrf_provider'
+            'form.csrf_provider',
         ];
     }
 

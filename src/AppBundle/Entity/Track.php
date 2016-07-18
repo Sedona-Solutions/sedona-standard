@@ -36,11 +36,10 @@ class Track
      */
     private $album;
 
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -48,9 +47,10 @@ class Track
     }
 
     /**
-     * Set title
+     * Set title.
      *
      * @param string $title
+     *
      * @return Track
      */
     public function setTitle($title)
@@ -61,9 +61,9 @@ class Track
     }
 
     /**
-     * Get title
+     * Get title.
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -71,9 +71,10 @@ class Track
     }
 
     /**
-     * Set album
+     * Set album.
      *
      * @param \AppBundle\Entity\Album $album
+     *
      * @return Track
      */
     public function setAlbum(\AppBundle\Entity\Album $album = null)
@@ -84,9 +85,9 @@ class Track
     }
 
     /**
-     * Get album
+     * Get album.
      *
-     * @return \AppBundle\Entity\Album 
+     * @return \AppBundle\Entity\Album
      */
     public function getAlbum()
     {

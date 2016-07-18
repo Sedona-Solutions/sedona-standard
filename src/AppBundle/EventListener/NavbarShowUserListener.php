@@ -19,19 +19,16 @@ use JMS\DiExtraBundle\Annotation\Service;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 /**
- * @package Sedona\SBOTestBundle
  * @Service("showuser.listener")
  */
 class NavbarShowUserListener
 {
-
     protected $token_storage;
 
     /**
      * @InjectParams({
-        "token_storage": @Inject("security.token_storage")
+     "token_storage": @Inject("security.token_storage")
      * })
-          
      */
     public function __construct(TokenStorageInterface $token_storage)
     {
@@ -41,6 +38,7 @@ class NavbarShowUserListener
     /**
      * @Observe("theme.navbar_user")
      * //Observe("theme.sidebar_user")
+     *
      * @param ShowUserEvent $event
      */
     public function onShowUser(ShowUserEvent $event)
@@ -52,6 +50,4 @@ class NavbarShowUserListener
     {
         return $this->token_storage->getToken()->getUser();
     }
-
-
 }

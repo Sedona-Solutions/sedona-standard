@@ -3,7 +3,6 @@
 namespace AppBundle\Controller\Admin;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -46,37 +45,36 @@ class AlbumController extends BaseCrudController
     }
 
     /**
-    * Create a new Album.
-    *
-    * @Route("/new", name="admin_album_new", options={"expose"=true})
-    */
+     * Create a new Album.
+     *
+     * @Route("/new", name="admin_album_new", options={"expose"=true})
+     */
     public function newAction(Request $request)
     {
         return $this->manageNew(new Album(), $request, AlbumType::class);
     }
 
     /**
-    * Edit a Album.
-    *
-    * @Route("/{id}/edit", name="admin_album_edit", options={"expose"=true})
-    */
+     * Edit a Album.
+     *
+     * @Route("/{id}/edit", name="admin_album_edit", options={"expose"=true})
+     */
     public function editAction(Album $entity, Request $request)
     {
         return $this->manageEdit($entity, $request, AlbumType::class);
     }
 
     /**
-    * Show a Album.
-    *
-    * @Route("/{id}", name="admin_album_show", options={"expose"=true})
-    * @Method("GET")
-    */
+     * Show a Album.
+     *
+     * @Route("/{id}", name="admin_album_show", options={"expose"=true})
+     * @Method("GET")
+     */
     public function showAction(Album $entity)
     {
         return $this->manageShow($entity);
     }
 
-            
     /**
      * Lists all Artist entities for property artist of entity Album.
      *
@@ -108,7 +106,7 @@ class AlbumController extends BaseCrudController
     {
         return $this->manageSearchFieldMany($request, $album, 'AppBundle\Entity\Artist', 'artist', 'name');
     }
-            
+
     /**
      * Add relation Album to artist.
      *
@@ -120,7 +118,6 @@ class AlbumController extends BaseCrudController
         return $this->manageJson($album, $artist, 'artist', 'addArtist', false);
     }
 
-            
     /**
      * Remove relation Album to artist.
      *
@@ -131,8 +128,7 @@ class AlbumController extends BaseCrudController
     {
         return $this->manageJson($album, $artist, 'artist', 'removeArtist', true);
     }
-    
-            
+
     /**
      * Lists all Track entities for property track of entity Album.
      *
@@ -164,7 +160,7 @@ class AlbumController extends BaseCrudController
     {
         return $this->manageSearchFieldMany($request, $album, 'AppBundle\Entity\Track', 'track', 'title');
     }
-            
+
     /**
      * Add relation Album to track.
      *
@@ -176,7 +172,6 @@ class AlbumController extends BaseCrudController
         return $this->manageJson($album, $track, 'track', 'addTrack', false);
     }
 
-            
     /**
      * Remove relation Album to track.
      *
@@ -187,7 +182,4 @@ class AlbumController extends BaseCrudController
     {
         return $this->manageJson($album, $track, 'track', 'removeTrack', true);
     }
-    
-
-
 }

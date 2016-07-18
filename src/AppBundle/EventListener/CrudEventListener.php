@@ -16,20 +16,22 @@ use JMS\DiExtraBundle\Annotation\Service;
 use Sedona\SBORuntimeBundle\Event\AdminCrudEvent;
 
 /**
- * Class CrudEventListener
- * @package Sedona\SBOTestBundle\EventListener
+ * Class CrudEventListener.
+ *
  * @Service("crud.listener")
  */
-class CrudEventListener 
+class CrudEventListener
 {
     /**
-     * Method called before flush
+     * Method called before flush.
+     *
      * @Observe("sbo.crud.preAction")
+     *
      * @param AdminCrudEvent $event
      */
     public function onCrudEventPre(AdminCrudEvent $event)
     {
-        switch($event->getAction()) {
+        switch ($event->getAction()) {
             case AdminCrudEvent::CREATE:
                 // Do something BEFORE creating
                 break;
@@ -43,13 +45,15 @@ class CrudEventListener
     }
 
     /**
-     * Method called after flush
+     * Method called after flush.
+     *
      * @Observe("sbo.crud.postAction")
+     *
      * @param AdminCrudEvent $event
      */
     public function onCrudEventPost(AdminCrudEvent $event)
     {
-        switch($event->getAction()) {
+        switch ($event->getAction()) {
             case AdminCrudEvent::CREATE:
                 // Do something AFTER creating
                 break;
@@ -61,5 +65,4 @@ class CrudEventListener
                 break;
         }
     }
-
 }

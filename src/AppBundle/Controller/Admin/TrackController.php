@@ -6,10 +6,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use AppBundle\Entity\Track;
 use AppBundle\Form\Admin\TrackType;
-use AppBundle\Entity\Album;
 
 /**
  * Track controller.
@@ -45,47 +43,44 @@ class TrackController extends BaseCrudController
     }
 
     /**
-    * Create a new Track.
-    *
-    * @Route("/new", name="admin_track_new", options={"expose"=true})
-    */
+     * Create a new Track.
+     *
+     * @Route("/new", name="admin_track_new", options={"expose"=true})
+     */
     public function newAction(Request $request)
     {
         return $this->manageNew(new Track(), $request, TrackType::class);
     }
 
     /**
-    * search Track.
-    *
-    * @Route("/searchAlbum", name="admin_track_album_search", options={"expose"=true})
-    *
-    * @return JsonResponse
-    */
+     * search Track.
+     *
+     * @Route("/searchAlbum", name="admin_track_album_search", options={"expose"=true})
+     *
+     * @return JsonResponse
+     */
     public function searchAlbumAction(Request $request)
     {
         return $this->searchSelect2($request, 'AppBundle\Entity\Album', 'title');
-    }        
+    }
     /**
-    * Edit a Track.
-    *
-    * @Route("/{id}/edit", name="admin_track_edit", options={"expose"=true})
-    */
+     * Edit a Track.
+     *
+     * @Route("/{id}/edit", name="admin_track_edit", options={"expose"=true})
+     */
     public function editAction(Track $entity, Request $request)
     {
         return $this->manageEdit($entity, $request, TrackType::class);
     }
 
     /**
-    * Show a Track.
-    *
-    * @Route("/{id}", name="admin_track_show", options={"expose"=true})
-    * @Method("GET")
-    */
+     * Show a Track.
+     *
+     * @Route("/{id}", name="admin_track_show", options={"expose"=true})
+     * @Method("GET")
+     */
     public function showAction(Track $entity)
     {
         return $this->manageShow($entity);
     }
-
-
-
 }

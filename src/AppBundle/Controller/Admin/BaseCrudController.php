@@ -4,9 +4,8 @@ namespace AppBundle\Controller\Admin;
 
 use Sedona\SBORuntimeBundle\Controller\BaseCrudController as SourceBaseCrudController;
 
-
 /**
- * Base CRUD Controller
+ * Base CRUD Controller.
  */
 abstract class BaseCrudController extends SourceBaseCrudController
 {
