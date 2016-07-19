@@ -19,17 +19,17 @@ fi
 
 if [ ! -f $FILE ]; then
     echo "Error: source file $FILE does not exist"
-    exit 2
+    exit 3
 fi
 
 if [ -d $DIR ]; then
     echo "Error: directory $DIR already exist"
-    exit 3
+    exit 4
 fi
 
 if [ $DIR = $FILE ]; then
     echo "Error: $FILE should have an extension"
-    exit 3
+    exit 5
 fi
 
 source setenv_deploy
