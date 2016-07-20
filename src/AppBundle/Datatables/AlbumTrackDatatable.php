@@ -33,7 +33,7 @@ class AlbumTrackDatatable extends TrackDatatable
         //$this->options->set(['individual_filtering' => true]); // Uncomment it to have a search for each field
 
         $actions = [];
-        if ($this->router->getRouteCollection()->get('admin_track_show') != null) {
+        if ($this->router->getRouteCollection()->get('admin_track_show')) {
             $actions[] = [
                 'route' => 'admin_track_show',
                 'route_parameters' => array('id' => 'id'),
@@ -47,7 +47,7 @@ class AlbumTrackDatatable extends TrackDatatable
                 ),
             ];
         }
-        if ($this->router->getRouteCollection()->get('admin_track_edit') != null) {
+        if ($this->router->getRouteCollection()->get('admin_track_edit')) {
             $actions[] = [
                 'route' => 'admin_track_edit',
                 'route_parameters' => array('id' => 'id'),
@@ -61,7 +61,7 @@ class AlbumTrackDatatable extends TrackDatatable
                 ),
             ];
         }
-        if ($this->router->getRouteCollection()->get('admin_track_delete') != null) {
+        if ($this->router->getRouteCollection()->get('admin_track_delete')) {
             $actions[] = [
                 'route' => 'admin_album_track_remove',
                 'route_parameters' => array('track_id' => 'id', 'id' => 'album.id'),

@@ -27,7 +27,7 @@ class ArtistDatatable extends AbstractCrudDatatableView
         //$this->options->set(['individual_filtering' => true]); // Uncomment it to have a search for each field
 
         $actions = [];
-        if ($this->router->getRouteCollection()->get('admin_artist_show') != null) {
+        if ($this->router->getRouteCollection()->get('admin_artist_show')) {
             $actions[] = [
                 'route' => 'admin_artist_show',
                 'route_parameters' => array('id' => 'id'),
@@ -42,7 +42,7 @@ class ArtistDatatable extends AbstractCrudDatatableView
             ];
         }
 
-        if ($this->router->getRouteCollection()->get('admin_artist_edit') != null) {
+        if ($this->router->getRouteCollection()->get('admin_artist_edit')) {
             $actions[] = [
                 'route' => 'admin_artist_edit',
                 'route_parameters' => array('id' => 'id'),
@@ -57,7 +57,7 @@ class ArtistDatatable extends AbstractCrudDatatableView
             ];
         }
 
-        if ($this->router->getRouteCollection()->get('admin_artist_delete') != null) {
+        if ($this->router->getRouteCollection()->get('admin_artist_delete')) {
             $actions[] = [
                 'route' => 'admin_artist_delete',
                 'route_parameters' => array('id' => 'id'),

@@ -33,7 +33,7 @@ class ArtistAlbumDatatable extends AlbumDatatable
         //$this->options->set(['individual_filtering' => true]); // Uncomment it to have a search for each field
 
         $actions = [];
-        if ($this->router->getRouteCollection()->get('admin_album_show') != null) {
+        if ($this->router->getRouteCollection()->get('admin_album_show')) {
             $actions[] = [
                 'route' => 'admin_album_show',
                 'route_parameters' => array('id' => 'id'),
@@ -47,7 +47,7 @@ class ArtistAlbumDatatable extends AlbumDatatable
                 ),
             ];
         }
-        if ($this->router->getRouteCollection()->get('admin_album_edit') != null) {
+        if ($this->router->getRouteCollection()->get('admin_album_edit')) {
             $actions[] = [
                 'route' => 'admin_album_edit',
                 'route_parameters' => array('id' => 'id'),
@@ -61,7 +61,7 @@ class ArtistAlbumDatatable extends AlbumDatatable
                 ),
             ];
         }
-        if ($this->router->getRouteCollection()->get('admin_album_delete') != null) {
+        if ($this->router->getRouteCollection()->get('admin_album_delete')) {
             $actions[] = [
                 'route' => 'admin_artist_album_remove',
                 'route_parameters' => array('album_id' => 'id', 'id' => 'artist[0].id'),
