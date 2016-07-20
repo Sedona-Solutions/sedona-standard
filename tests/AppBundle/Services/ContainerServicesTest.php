@@ -23,6 +23,7 @@ class ContainerServicesTest extends WebTestCase
             'security.secure_random',
             'security.context',
             'form.csrf_provider',
+            'cache.default_redis_provider',
         ];
     }
 
@@ -34,7 +35,7 @@ class ContainerServicesTest extends WebTestCase
 
         foreach ($container->getServiceIds() as $serviceId) {
             try {
-                if (!in_array($serviceId, $this->getBlackList())) {
+                if (!in_array($serviceId, $this->getBlackList()) && 'form.type.' != substr($serviceId,0,10)) {
                     $service = $client->getContainer()->get($serviceId);
                     $this->assertNotNull($service);
                 }
