@@ -1,0 +1,8 @@
+php_version: 5
+
+rules:
+  symfony.controller.too_many_actions_per_controller:
+    max_count: 15 # 10 is too low for CRUD controllers with multiple links, however, new generation with multiple files should be added
+
+  symfony.web_config_should_not_be_present:
+    enabled: false # It's a template project, config.php should be removed before using it on production
