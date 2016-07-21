@@ -11,6 +11,7 @@ When using it as a start for new projects, don't forget to change:
 * Licence (if not MIT!)/Name/Description in composer.json
 * Secret in parameters.yml
 * AppBundle content
+* framework.session.name (in config.yml)
 * Remove web/config.php before putting into production
 
 Credits
