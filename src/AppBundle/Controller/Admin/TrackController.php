@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Track;
-use AppBundle\Form\Admin\TrackType;
+use AppBundle\Form\Type\Admin\TrackType;
 
 /**
  * Track controller.

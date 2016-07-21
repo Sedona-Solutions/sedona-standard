@@ -7,7 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use AppBundle\Entity\Album;
-use AppBundle\Form\Admin\AlbumType;
+use AppBundle\Form\Type\Admin\AlbumType;
 use AppBundle\Entity\Artist;
 use AppBundle\Entity\Track;
 
