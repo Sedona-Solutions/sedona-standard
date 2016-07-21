@@ -40,5 +40,5 @@ admin:
         entity_name: Artist
         name: Name
         biography: Biography
-        music_story_id: Music story id
+        external_id: External id
         album: Album

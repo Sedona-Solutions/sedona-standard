@@ -16,7 +16,7 @@ class TrackType extends AbstractType
     {
         /*  */
         $builder
-            ->add('title', null, ['required' => true])
+            ->add('title', null, ['required' => false])
             ->add('album', \Sedona\SBORuntimeBundle\Form\Type\EntitySelect2Type::class, [
                    'class' => 'AppBundle\Entity\Album',
                    'searchRouteName' => 'admin_track_album_search',

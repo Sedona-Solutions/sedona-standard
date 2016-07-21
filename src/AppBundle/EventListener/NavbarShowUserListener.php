@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of sedona-sbo Demo.
+ * This file is part of sedona-standard.
  *
  * (c) Sedona <http://www.sedona.fr/>
  *

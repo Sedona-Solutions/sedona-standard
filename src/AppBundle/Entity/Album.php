@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of sedona-sbo Demo.
+ * This file is part of sedona-standard.
  *
  * (c) Sedona <http://www.sedona.fr/>
  *
@@ -26,12 +26,17 @@ class Album
     private $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $title;
 
     /**
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Artist", inversedBy="album")
+     * @ORM\JoinTable(
+     *     name="AlbumArtist",
+     *     joinColumns={@ORM\JoinColumn(name="Album_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="Artist_id", referencedColumnName="id")}
+     * )
      */
     private $artist;
 

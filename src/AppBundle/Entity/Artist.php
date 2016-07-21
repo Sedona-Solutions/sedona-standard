@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of sedona-sbo Demo.
+ * This file is part of sedona-standard.
  *
  * (c) Sedona <http://www.sedona.fr/>
  *
@@ -26,7 +26,7 @@ class Artist
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $name;
 
@@ -43,7 +43,7 @@ class Artist
     /**
      * @ORM\Column(type="bigint", nullable=true)
      */
-    private $music_story_id;
+    private $external_id;
 
     /**
      * Constructor.
@@ -112,30 +112,6 @@ class Artist
     }
 
     /**
-     * Set music_story_id.
-     *
-     * @param int $musicStoryId
-     *
-     * @return Artist
-     */
-    public function setMusicStoryId($musicStoryId)
-    {
-        $this->music_story_id = $musicStoryId;
-
-        return $this;
-    }
-
-    /**
-     * Get music_story_id.
-     *
-     * @return int
-     */
-    public function getMusicStoryId()
-    {
-        return $this->music_story_id;
-    }
-
-    /**
      * Add album.
      *
      * @param \AppBundle\Entity\Album $album
@@ -181,5 +157,25 @@ class Artist
     public function __toString()
     {
         return $this->getName();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getExternalId()
+    {
+        return $this->external_id;
+    }
+
+    /**
+     * @param mixed $external_id
+     *
+     * @return $this
+     */
+    public function setExternalId($external_id)
+    {
+        $this->external_id = $external_id;
+
+        return $this;
     }
 }

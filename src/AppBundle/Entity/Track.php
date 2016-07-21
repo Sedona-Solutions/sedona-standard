@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of sedona-sbo Demo.
+ * This file is part of sedona-standard.
  *
  * (c) Sedona <http://www.sedona.fr/>
  *
@@ -26,7 +26,7 @@ class Track
     private $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $title;
 

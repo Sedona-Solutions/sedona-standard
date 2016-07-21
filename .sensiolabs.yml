@@ -6,3 +6,6 @@ rules:
 
   symfony.web_config_should_not_be_present:
     enabled: false # It's a template project, config.php should be removed before using it on production
+
+  symfony.obvious_csrf_key:
+      enabled: false # It's a template project, secret should be changed before using it on production

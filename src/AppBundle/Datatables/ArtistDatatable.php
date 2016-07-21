@@ -27,7 +27,7 @@ class ArtistDatatable extends AbstractCrudDatatableView
         //$this->options->set(['individual_filtering' => true]); // Uncomment it to have a search for each field
 
         $actions = [];
-        if ($this->router->getRouteCollection()->get('admin_artist_show')) {
+        if ($this->router->getRouteCollection()->get('admin_artist_show') != null) {
             $actions[] = [
                 'route' => 'admin_artist_show',
                 'route_parameters' => array('id' => 'id'),
@@ -42,7 +42,7 @@ class ArtistDatatable extends AbstractCrudDatatableView
             ];
         }
 
-        if ($this->router->getRouteCollection()->get('admin_artist_edit')) {
+        if ($this->router->getRouteCollection()->get('admin_artist_edit') != null) {
             $actions[] = [
                 'route' => 'admin_artist_edit',
                 'route_parameters' => array('id' => 'id'),
@@ -57,7 +57,7 @@ class ArtistDatatable extends AbstractCrudDatatableView
             ];
         }
 
-        if ($this->router->getRouteCollection()->get('admin_artist_delete')) {
+        if ($this->router->getRouteCollection()->get('admin_artist_delete') != null) {
             $actions[] = [
                 'route' => 'admin_artist_delete',
                 'route_parameters' => array('id' => 'id'),
@@ -103,7 +103,7 @@ class ArtistDatatable extends AbstractCrudDatatableView
         $this->getColumnBuilder()
             ->add('name', 'column', array('title' => $this->translator->trans('admin.artist.name', [], 'admin')))
             // ->add('biography', 'column', array('title' => $this->translator->trans('admin.artist.biography', [], 'admin'))) Text field, uncomment to add
-            ->add('music_story_id', 'column', array('title' => $this->translator->trans('admin.artist.music_story_id', [], 'admin')))
+            ->add('external_id', 'column', array('title' => $this->translator->trans('admin.artist.external_id', [], 'admin')))
         ;
     }
 
