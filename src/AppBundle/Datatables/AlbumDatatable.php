@@ -4,11 +4,11 @@ namespace AppBundle\Datatables;
 
 use JMS\DiExtraBundle\Annotation\Service;
 use JMS\DiExtraBundle\Annotation\Tag;
+use Sg\DatatablesBundle\Datatable\View\AbstractDatatableView;
 use Sg\DatatablesBundle\Datatable\View\Style;
 
 /**
- * Class AlbumDatatable.
- *
+ * Class AlbumDatatable
  * @Service("admin_album_datatable")
  * @Tag("sg.datatable.view")
  */
@@ -17,7 +17,7 @@ class AlbumDatatable extends AbstractCrudDatatableView
     /**
      * {@inheritdoc}
      */
-    public function buildDatatable(array $options = [])
+    public function buildDatatable(array $options= [])
     {
         $this->setParameters();
         $this->setColumns();
@@ -27,7 +27,7 @@ class AlbumDatatable extends AbstractCrudDatatableView
         //$this->options->set(['individual_filtering' => true]); // Uncomment it to have a search for each field
 
         $actions = [];
-        if ($this->router->getRouteCollection()->get('admin_album_show') != null) {
+        if ($this->router->getRouteCollection()->get('admin_album_show')) {
             $actions[] = [
                 'route' => 'admin_album_show',
                 'route_parameters' => array('id' => 'id'),
@@ -37,12 +37,12 @@ class AlbumDatatable extends AbstractCrudDatatableView
                     'rel' => 'tooltip',
                     'title' => 'Show',
                     'class' => 'btn btn-default btn-xs',
-                    'role' => 'button',
-                ),
+                    'role' => 'button'
+                )
             ];
         }
 
-        if ($this->router->getRouteCollection()->get('admin_album_edit') != null) {
+        if ($this->router->getRouteCollection()->get('admin_album_edit')) {
             $actions[] = [
                 'route' => 'admin_album_edit',
                 'route_parameters' => array('id' => 'id'),
@@ -52,12 +52,12 @@ class AlbumDatatable extends AbstractCrudDatatableView
                     'rel' => 'tooltip',
                     'title' => $this->translator->trans('crud.title.edit', [], 'admin'),
                     'class' => 'btn btn-default btn-xs',
-                    'role' => 'button',
-                ),
+                    'role' => 'button'
+                )
             ];
         }
 
-        if ($this->router->getRouteCollection()->get('admin_album_delete') != null) {
+        if ($this->router->getRouteCollection()->get('admin_album_delete')) {
             $actions[] = [
                 'route' => 'admin_album_delete',
                 'route_parameters' => array('id' => 'id'),
@@ -69,22 +69,21 @@ class AlbumDatatable extends AbstractCrudDatatableView
                     'class' => 'btn btn-default btn-xs',
                     'role' => 'button',
                     'data-toggle' => 'delete',
-                    'data-confirm' => $this->translator->trans('crud.form.confirm', [], 'admin'),
-                ),
+                    'data-confirm' => $this->translator->trans('crud.form.confirm', [], 'admin')
+                )
             ];
         }
 
-        if (count($actions) > 0) {
+        if(count($actions)>0) {
             $this->getColumnBuilder()
                 ->add(null, 'action', array(
                     'title' => 'Actions',
-                    'actions' => $actions,
+                    'actions' => $actions
                 ));
         }
     }
 
-    protected function setParameters()
-    {
+    protected function setParameters() {
         $this->features->set([
             'server_side' => true,
             'processing' => true,
@@ -95,11 +94,12 @@ class AlbumDatatable extends AbstractCrudDatatableView
         ]);
     }
 
+
     /**
      * {@inheritdoc}
      */
-    protected function setColumns()
-    {
+    protected function setColumns() {
+
         $this->getColumnBuilder()
             ->add('title', 'column', array('title' => $this->translator->trans('admin.album.title', [], 'admin')))
             ->add('date', 'datetime', array('title' => $this->translator->trans('admin.album.date', [], 'admin'), 'date_format' => 'L'))
@@ -109,16 +109,16 @@ class AlbumDatatable extends AbstractCrudDatatableView
     }
 
     /**
-     * {@inheritdoc}
-     */
+    * {@inheritdoc}
+    */
     public function getEntity()
     {
         return 'AppBundle:Album';
     }
 
     /**
-     * {@inheritdoc}
-     */
+    * {@inheritdoc}
+    */
     public function getName()
     {
         return 'album_datatable';
