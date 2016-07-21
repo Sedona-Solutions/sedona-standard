@@ -130,14 +130,14 @@ class Album
     /**
      * Add artist.
      *
-     * @param \Sedona\SBOTestBundle\Entity\Artist $artist
+     * @param \AppBundle\Entity\Artist $artist
      *
      * @return Album
      */
     public function addArtist(\AppBundle\Entity\Artist $artist)
     {
         $this->artist[] = $artist;
-        if ($artist->getAlbum()->contains($this) == false) {
+        if ($artist->getAlbum()->contains($this) === false) {
             $artist->addAlbum($this);
         }
 
@@ -147,7 +147,7 @@ class Album
     /**
      * Remove artist.
      *
-     * @param \Sedona\SBOTestBundle\Entity\Artist $artist
+     * @param \AppBundle\Entity\Artist $artist
      */
     public function removeArtist(\AppBundle\Entity\Artist $artist)
     {
@@ -170,7 +170,7 @@ class Album
     /**
      * Add track.
      *
-     * @param \Sedona\SBOTestBundle\Entity\Track $track
+     * @param \AppBundle\Entity\Track $track
      *
      * @return Album
      */
@@ -185,7 +185,7 @@ class Album
     /**
      * Remove track.
      *
-     * @param \Sedona\SBOTestBundle\Entity\Track $track
+     * @param \AppBundle\Entity\Track $track
      */
     public function removeTrack(\AppBundle\Entity\Track $track)
     {

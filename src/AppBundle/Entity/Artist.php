@@ -121,7 +121,7 @@ class Artist
     public function addAlbum(\AppBundle\Entity\Album $album)
     {
         $this->album[] = $album;
-        if ($album->getArtist()->contains($this) == false) {
+        if ($album->getArtist()->contains($this) === false) {
             $album->addArtist($this);
         }
 
