@@ -21,13 +21,13 @@ class AlbumType extends AbstractType
             ->add('date', Type\DateType::class, array('widget' => 'single_text', 'format' => 'MM/dd/yyyy', 'required' => false))
             ->add('datetime', Type\DateTimeType::class, array('widget' => 'single_text', 'format' => 'MM/dd/yyyy HH:mm:ss', 'required' => false))
             ->add('time', Type\TimeType::class, array('widget' => 'single_text', 'with_seconds' => true, 'required' => false))
-        //   ->add("artist", \Sedona\SBORuntimeBundle\Form\Type\EntitySelect2Type::class, [
+        //   ->add('artist', \Sedona\SBORuntimeBundle\Form\Type\EntitySelect2Type::class, [
         //           'class'             => 'AppBundle\Entity\Artist',
         //           'searchRouteName'   => 'admin_artist_search',
         //           'property'          => 'name',
         //           'required'          => false
         //       ])
-        //   ->add("track", \Sedona\SBORuntimeBundle\Form\Type\EntitySelect2Type::class, [
+        //   ->add('track', \Sedona\SBORuntimeBundle\Form\Type\EntitySelect2Type::class, [
         //           'class'             => 'AppBundle\Entity\Track',
         //           'searchRouteName'   => 'admin_track_search',
         //           'property'          => 'title',

@@ -63,6 +63,7 @@ class TrackController extends BaseCrudController
     {
         return $this->searchSelect2($request, 'AppBundle\Entity\Album', 'title');
     }
+
     /**
      * Edit a Track.
      *

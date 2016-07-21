@@ -19,7 +19,7 @@ class ArtistType extends AbstractType
             ->add('name', null, ['required' => false])
             ->add('biography', \Trsteel\CkeditorBundle\Form\Type\CkeditorType::class, ['required' => false])
             ->add('external_id', null, ['required' => false])
-        //   ->add("album", \Sedona\SBORuntimeBundle\Form\Type\EntitySelect2Type::class, [
+        //   ->add('album', \Sedona\SBORuntimeBundle\Form\Type\EntitySelect2Type::class, [
         //           'class'             => 'AppBundle\Entity\Album',
         //           'searchRouteName'   => 'admin_album_search',
         //           'property'          => 'title',

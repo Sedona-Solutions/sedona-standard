@@ -4,3 +4,4 @@ php bin/console sbo:generate:crud --entity AppBundle:Album --with-write --overwr
 php bin/console sbo:generate:crud --entity AppBundle:Artist --with-write --overwrite -n
 php bin/console sbo:generate:crud --entity AppBundle:Track --with-write --overwrite -n
 
+./bin/php-cs-fixer fix ./src --level=symfony

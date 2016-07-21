@@ -83,6 +83,9 @@ class TrackDatatable extends AbstractCrudDatatableView
         }
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function setParameters()
     {
         $this->features->set([
