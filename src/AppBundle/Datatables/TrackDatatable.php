@@ -4,11 +4,11 @@ namespace AppBundle\Datatables;
 
 use JMS\DiExtraBundle\Annotation\Service;
 use JMS\DiExtraBundle\Annotation\Tag;
-use Sg\DatatablesBundle\Datatable\View\AbstractDatatableView;
 use Sg\DatatablesBundle\Datatable\View\Style;
 
 /**
- * Class TrackDatatable
+ * Class TrackDatatable.
+ *
  * @Service("admin_track_datatable")
  * @Tag("sg.datatable.view")
  */
@@ -17,7 +17,7 @@ class TrackDatatable extends AbstractCrudDatatableView
     /**
      * {@inheritdoc}
      */
-    public function buildDatatable(array $options= [])
+    public function buildDatatable(array $options = [])
     {
         $this->setParameters();
         $this->setColumns();
@@ -37,8 +37,8 @@ class TrackDatatable extends AbstractCrudDatatableView
                     'rel' => 'tooltip',
                     'title' => 'Show',
                     'class' => 'btn btn-default btn-xs',
-                    'role' => 'button'
-                )
+                    'role' => 'button',
+                ),
             ];
         }
 
@@ -52,8 +52,8 @@ class TrackDatatable extends AbstractCrudDatatableView
                     'rel' => 'tooltip',
                     'title' => $this->translator->trans('crud.title.edit', [], 'admin'),
                     'class' => 'btn btn-default btn-xs',
-                    'role' => 'button'
-                )
+                    'role' => 'button',
+                ),
             ];
         }
 
@@ -69,21 +69,22 @@ class TrackDatatable extends AbstractCrudDatatableView
                     'class' => 'btn btn-default btn-xs',
                     'role' => 'button',
                     'data-toggle' => 'delete',
-                    'data-confirm' => $this->translator->trans('crud.form.confirm', [], 'admin')
-                )
+                    'data-confirm' => $this->translator->trans('crud.form.confirm', [], 'admin'),
+                ),
             ];
         }
 
-        if(count($actions)>0) {
+        if (count($actions) > 0) {
             $this->getColumnBuilder()
                 ->add(null, 'action', array(
                     'title' => 'Actions',
-                    'actions' => $actions
+                    'actions' => $actions,
                 ));
         }
     }
 
-    protected function setParameters() {
+    protected function setParameters()
+    {
         $this->features->set([
             'server_side' => true,
             'processing' => true,
@@ -94,12 +95,11 @@ class TrackDatatable extends AbstractCrudDatatableView
         ]);
     }
 
-
     /**
      * {@inheritdoc}
      */
-    protected function setColumns() {
-
+    protected function setColumns()
+    {
         $this->getColumnBuilder()
             ->add('title', 'column', array('title' => $this->translator->trans('admin.track.title', [], 'admin')))
             // ->add('album.name', 'column', array('title' => $this->translator->trans('admin.track.album', [], 'admin'))) Many to one, uncomment and select column to add
@@ -107,16 +107,16 @@ class TrackDatatable extends AbstractCrudDatatableView
     }
 
     /**
-    * {@inheritdoc}
-    */
+     * {@inheritdoc}
+     */
     public function getEntity()
     {
         return 'AppBundle:Track';
     }
 
     /**
-    * {@inheritdoc}
-    */
+     * {@inheritdoc}
+     */
     public function getName()
     {
         return 'track_datatable';
