@@ -28,6 +28,7 @@ class AppKernel extends Kernel
 
             new Trsteel\CkeditorBundle\TrsteelCkeditorBundle(),
             new FM\ElfinderBundle\FMElfinderBundle(),
+            new Exercise\HTMLPurifierBundle\ExerciseHTMLPurifierBundle(),
             
             new Sedona\SBORuntimeBundle\SedonaSBORuntimeBundle(),
         ];
