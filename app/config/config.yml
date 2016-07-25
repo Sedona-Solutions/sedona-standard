@@ -7,6 +7,7 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    html_purifier_cache_dir: '%kernel.cache_dir%/../htmlpurifier/%kernel.environment%'
 
 framework:
     #esi:             ~
@@ -96,6 +97,9 @@ fm_elfinder:
                         upload_max_size: 2M
 
 trsteel_ckeditor:
+    html_purifier:
+      config:
+        Cache.SerializerPath: '%html_purifier_cache_dir%'
     toolbar: ['document', 'clipboard', 'editing', '/', 'basicstyles', 'paragraph', 'links', '/', 'insert', 'styles', 'tools']
     toolbar_groups:
         document: ['Source','-','-','Templates']
@@ -113,3 +117,7 @@ trsteel_ckeditor:
         route: elfinder
         route_parameters:
              instance: ckeditor
+
+exercise_html_purifier:
+    default:
+       Cache.SerializerPath: '%html_purifier_cache_dir%'
