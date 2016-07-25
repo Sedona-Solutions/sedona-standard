@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d1cb9ccda64fe075b80d0a3f9579a5f7",
-    "content-hash": "2864e739dea9a4e05f3b269e6f39d2f4",
+    "hash": "837024a4622363485e3e7d01acdf1852",
+    "content-hash": "730ecf7c80855413cb7960826224f40d",
     "packages": [
         {
             "name": "avanzu/admin-theme-bundle",
@@ -1199,6 +1199,57 @@
                 "bootstrap"
             ],
             "time": "2015-09-10 19:50:15"
+        },
+        {
+            "name": "exercise/htmlpurifier-bundle",
+            "version": "v0.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Exercise/HTMLPurifierBundle.git",
+                "reference": "3b5842de5e7ffee2c360eb7746519797a2fbb0f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Exercise/HTMLPurifierBundle/zipball/3b5842de5e7ffee2c360eb7746519797a2fbb0f6",
+                "reference": "3b5842de5e7ffee2c360eb7746519797a2fbb0f6",
+                "shasum": ""
+            },
+            "require": {
+                "ezyang/htmlpurifier": "~4.0",
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "~2.0|~3.0"
+            },
+            "require-dev": {
+                "symfony/form": "~2.0",
+                "twig/twig": "~1.3"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Exercise\\HTMLPurifierBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "contributors",
+                    "homepage": "https://github.com/Exercise/HTMLPurifierBundle/contributors"
+                }
+            ],
+            "description": "HTMLPurifier integration for your Symfony2 project",
+            "homepage": "https://github.com/Exercise/HTMLPurifierBundle",
+            "keywords": [
+                "htmlpurifier"
+            ],
+            "time": "2015-12-01 17:32:26"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -2503,12 +2554,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sedona-Solutions/sedona-sbo.git",
-                "reference": "9ce3c25fac8407a1167f4f5659ef933e23bcba47"
+                "reference": "83622dbc1378f879964801128d06f9345d174916"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sedona-Solutions/sedona-sbo/zipball/9ce3c25fac8407a1167f4f5659ef933e23bcba47",
-                "reference": "9ce3c25fac8407a1167f4f5659ef933e23bcba47",
+                "url": "https://api.github.com/repos/Sedona-Solutions/sedona-sbo/zipball/83622dbc1378f879964801128d06f9345d174916",
+                "reference": "83622dbc1378f879964801128d06f9345d174916",
                 "shasum": ""
             },
             "require": {
@@ -2517,7 +2568,7 @@
                 "doctrine/doctrine-bundle": "~1.4",
                 "doctrine/orm": "^2.4.8",
                 "eonasdan/bootstrap-datetimepicker": "~4.0",
-                "ezyang/htmlpurifier": "~4.0",
+                "exercise/htmlpurifier-bundle": "^0.2.3",
                 "friendsofsymfony/jsrouting-bundle": "^1.5",
                 "helios-ag/fm-elfinder-bundle": "~6.0",
                 "jms/di-extra-bundle": "~1.5",
@@ -2551,7 +2602,7 @@
                 }
             ],
             "description": "Sedona Back-Office bundles",
-            "time": "2016-07-20 10:04:28"
+            "time": "2016-07-25 09:49:04"
         },
         {
             "name": "select2/select2",
@@ -3846,6 +3897,117 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "fabpot/php-cs-fixer",
+            "version": "v1.11.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
+                "reference": "41dc93abd2937a85a3889e28765231d574d2bac8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/41dc93abd2937a85a3889e28765231d574d2bac8",
+                "reference": "41dc93abd2937a85a3889e28765231d574d2bac8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-tokenizer": "*",
+                "php": ">=5.3.6",
+                "sebastian/diff": "~1.1",
+                "symfony/console": "~2.3|~3.0",
+                "symfony/event-dispatcher": "~2.1|~3.0",
+                "symfony/filesystem": "~2.1|~3.0",
+                "symfony/finder": "~2.1|~3.0",
+                "symfony/process": "~2.3|~3.0",
+                "symfony/stopwatch": "~2.5|~3.0"
+            },
+            "conflict": {
+                "hhvm": "<3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.5|^5",
+                "satooshi/php-coveralls": "^0.7.1"
+            },
+            "bin": [
+                "php-cs-fixer"
+            ],
+            "type": "application",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\CS\\": "Symfony/CS/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dariusz Rumiński",
+                    "email": "dariusz.ruminski@gmail.com"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "A tool to automatically fix PHP code style",
+            "abandoned": "friendsofphp/php-cs-fixer",
+            "time": "2016-07-22 06:46:28"
+        },
+        {
+            "name": "sebastian/diff",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/diff.git",
+                "reference": "13edfd8706462032c2f52b4b862974dd46b71c9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/13edfd8706462032c2f52b4b862974dd46b71c9e",
+                "reference": "13edfd8706462032c2f52b4b862974dd46b71c9e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kore Nordmann",
+                    "email": "mail@kore-nordmann.de"
+                },
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Diff implementation",
+            "homepage": "https://github.com/sebastianbergmann/diff",
+            "keywords": [
+                "diff"
+            ],
+            "time": "2015-12-08 07:14:41"
+        },
         {
             "name": "sensio/generator-bundle",
             "version": "v3.0.7",
