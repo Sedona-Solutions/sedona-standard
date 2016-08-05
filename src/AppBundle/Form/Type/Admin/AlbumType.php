@@ -5,7 +5,7 @@ namespace AppBundle\Form\Type\Admin;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type as Type;
+use Sedona\SBORuntimeBundle\Form\Type as SBOType;
 
 class AlbumType extends AbstractType
 {
@@ -18,9 +18,9 @@ class AlbumType extends AbstractType
         /*  */
         $builder
             ->add('title', null, ['required' => false])
-            ->add('date', Type\DateType::class, array('widget' => 'single_text', 'format' => 'MM/dd/yyyy', 'required' => false))
-            ->add('datetime', Type\DateTimeType::class, array('widget' => 'single_text', 'format' => 'MM/dd/yyyy HH:mm:ss', 'required' => false))
-            ->add('time', Type\TimeType::class, array('widget' => 'single_text', 'with_seconds' => true, 'required' => false))
+            ->add('date', SBOType\LocaleDateType::class, array('widget' => 'single_text', 'format' => 'MM/dd/yyyy', 'required' => false))
+            ->add('datetime', SBOType\LocaleDateTimeType::class, array('widget' => 'single_text', 'format' => 'MM/dd/yyyy HH:mm:ss', 'required' => false))
+            ->add('time', SBOType\LocaleTimeType::class, array('widget' => 'single_text', 'required' => false))
         //   ->add('artist', \Sedona\SBORuntimeBundle\Form\Type\EntitySelect2Type::class, [
         //           'class'             => 'AppBundle\Entity\Artist',
         //           'searchRouteName'   => 'admin_artist_search',

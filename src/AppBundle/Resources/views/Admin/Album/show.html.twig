@@ -41,11 +41,11 @@
                             </tr>
                             <tr>
                                 <th>{{ "admin.album.datetime"|trans([], "admin") }}</th>
-                                <td>{{ entity.datetime|localizeddate("long","medium") }}</td>
+                                <td>{{ entity.datetime|localizeddate("long","short") }}</td>
                             </tr>
                             <tr>
                                 <th>{{ "admin.album.time"|trans([], "admin") }}</th>
-                                <td>{{ entity.time|localizeddate("none","medium") }}</td>
+                                <td>{{ entity.time|localizeddate("none","short") }}</td>
                             </tr>
                         </tbody>
                     </table>
